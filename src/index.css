@@ -37,6 +37,12 @@ code {
 
   }
 }
+@media(max-width: 990px) {
+  .navbar .container-fluid {
+    display: block;
+    margin: auto;
+  }
+}
 
 .btn_div {
   width: 300px;
@@ -46,7 +52,7 @@ code {
 
 .pending form {
   width: 300px;
-  height: 350px;
+  height: 400px;
   background-color: #17a2b8;
   border-radius: 10px;
 }

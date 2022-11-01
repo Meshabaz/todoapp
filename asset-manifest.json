@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/todoapp/static/css/main.314deab6.css",
-    "main.js": "/todoapp/static/js/main.278951e4.js",
+    "main.js": "/todoapp/static/js/main.5d9aaa6e.js",
     "static/js/787.b8fa26a9.chunk.js": "/todoapp/static/js/787.b8fa26a9.chunk.js",
     "static/media/logo.gif": "/todoapp/static/media/logo.4cc4c11eecdfef9bff46.gif",
     "static/media/bootstrap-icons.woff?": "/todoapp/static/media/bootstrap-icons.e559bf06bc84fd9525e6.woff",
@@ -9,18 +9,20 @@
     "static/media/add_btn.png": "/todoapp/static/media/add_btn.184e33a3a153d38f2b7c.png",
     "static/media/success_alert.png": "/todoapp/static/media/success_alert.40be90c576000b57198f.png",
     "static/media/m_w.png": "/todoapp/static/media/m_w.3f5f16e2d825dbfd0a9c.png",
+    "static/media/profile.png": "/todoapp/static/media/profile.f5671f59eaebdbb8631c.png",
     "static/media/close_btn.png": "/todoapp/static/media/close_btn.1aca33b412660ededa3f.png",
+    "static/media/about.png": "/todoapp/static/media/about.3c2beda4538b8783d200.png",
     "static/media/gear.png": "/todoapp/static/media/gear.4e3316845653e7b290d6.png",
     "static/media/m_s.png": "/todoapp/static/media/m_s.c671b5bbd1ca98a3558d.png",
     "static/media/danger_alert.png": "/todoapp/static/media/danger_alert.459b3fc64c79c47efb90.png",
     "static/media/warning_alert.png": "/todoapp/static/media/warning_alert.1f73732f9d770f31cdb6.png",
     "index.html": "/todoapp/index.html",
     "main.314deab6.css.map": "/todoapp/static/css/main.314deab6.css.map",
-    "main.278951e4.js.map": "/todoapp/static/js/main.278951e4.js.map",
+    "main.5d9aaa6e.js.map": "/todoapp/static/js/main.5d9aaa6e.js.map",
     "787.b8fa26a9.chunk.js.map": "/todoapp/static/js/787.b8fa26a9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.314deab6.css",
-    "static/js/main.278951e4.js"
+    "static/js/main.5d9aaa6e.js"
   ]
 }

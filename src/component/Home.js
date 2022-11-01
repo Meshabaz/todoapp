@@ -58,8 +58,8 @@ export default function Home(props) {
         style={{ justifyContent: "space-between", alignItems: "center" }}
       >
         <h3>
-          Everyone is dreamning of being successfull but only few can achive it
-          ! Let'us make some priorities, and do some task...{" "}
+          Everyone is dreamning of being successful but only few can achive it !
+          Let'us make some priorities, and do some task...{" "}
         </h3>
         <img src={manworking} alt="" style={{ pointerEvents: "none" }} />
       </div>

@@ -1,6 +1,8 @@
 import React from "react";
 import gear from "./images/gear.png";
 import logo from "./images/logo.gif";
+import profile from "./images/profile.png";
+import about from "./images/about.png";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
@@ -41,11 +43,37 @@ export default function Navbar() {
               </li>
             </ul>
             <ul className="navbar-nav">
-              <li className="nav-item active">
+              {/* <li className="nav-item active">
                 <Link className="nav-link d-flex" to="/">
                   <img src={gear} style={{ width: "30px" }} alt="" />
                 </Link>
-              </li>
+              </li> */}
+              <div className="dropdown dropleft">
+                <button
+                  className="btn "
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  style={{ border: "none" }}
+                >
+                  <img src={gear} style={{ width: "30px" }} alt="" />
+                </button>
+                <div
+                  className="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton"
+                >
+                  <Link className="dropdown-item" to="/works">
+                    <img src={profile} style={{ width: "30px" }} alt="" />
+                    Profile
+                  </Link>
+                  <Link className="dropdown-item" to="/todoapp">
+                    <img src={about} style={{ width: "30px" }} alt="" />
+                    About
+                  </Link>
+                </div>
+              </div>
             </ul>
           </div>
         </div>

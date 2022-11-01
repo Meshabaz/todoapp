@@ -1,20 +1,18 @@
-import React from 'react';
-import close_btn from './images/close_btn.png'
+import React from "react";
+import close_btn from "./images/close_btn.png";
+import warning_alert from "./images/warning_alert.png";
+import danger_alert from "./images/danger_alert.png";
 
-
-export default function Works() {
+export default function Works(props) {
   const arr = JSON.parse(localStorage.getItem("todo")) || [];
   console.log("tasks:", arr);
 
-
   const showToTable = () => {
-
-    document.querySelector("tbody").innerHTML = ''
+    document.querySelector("tbody").innerHTML = "";
     arr.forEach((e, i) => {
-
       let row = document.createElement("tr");
       let id = document.createElement("td");
-      id.innerText = `(${i + 1})`
+      id.innerText = `(${i + 1})`;
       let task = document.createElement("td");
       task.innerText = e.task;
       let priority = document.createElement("td");
@@ -25,45 +23,54 @@ export default function Works() {
       time.innerText = e.time;
       let remove = document.createElement("td");
       remove.innerHTML = `<button class="btn removebtn btn-warning">Remove</button>`;
-      remove.addEventListener('click', () => {
+      remove.addEventListener("click", () => {
         // del(i);
-        openPending(i);
-      })
+        props.showAlert(
+          `${warning_alert}`,
+          "This action may delete your data !",
+          "warning"
+        );
+        setTimeout(() => {
+          openPending(i);
+        }, 1600);
+      });
 
       row.append(id, task, priority, date, time, remove);
       document.querySelector("tbody").append(row);
-
-    })
-
-  }
+    });
+  };
 
   setTimeout(() => {
     showToTable();
   }, 10);
-  
-  function openPending(i){
-    document.querySelector(".pending").style.display = 'flex';              
-    document.querySelector(".delete").addEventListener('click',(e)=>{
-      // alert(i)
-      e.preventDefault();
-      arr.splice(i,1);
-      localStorage.setItem('todo',JSON.stringify(arr));
-      showToTable();
-    document.querySelector(".pending").style.display = 'none';              
-    })
-    document.querySelector(".cancel").addEventListener('click',(e)=>{
-      // alert(i)
-      e.preventDefault();
-    document.querySelector(".pending").style.display = 'none';              
-    })
-  }
 
+  function openPending(i) {
+    document.querySelector(".pending").style.display = "flex";
+    document.querySelector(".delete").addEventListener("click", (e) => {
+      // alert(i)
+      e.preventDefault();
+      arr.splice(i, 1);
+      localStorage.setItem("todo", JSON.stringify(arr));
+      showToTable();
+      document.querySelector(".pending").style.display = "none";
+      props.showAlert(
+        `${danger_alert}`,
+        "Data deleted successfully !",
+        "danger"
+      );
+    });
+    document.querySelector(".cancel").addEventListener("click", (e) => {
+      // alert(i)
+      e.preventDefault();
+      document.querySelector(".pending").style.display = "none";
+    });
+  }
 
   // function del(e) {
   //   if (cnfrmdel===true) {
   //     arr.splice(e, 1);
   //     localStorage.setItem("todo", JSON.stringify(arr));
-  //     showToTable();      
+  //     showToTable();
   //   }
   // }
 
@@ -71,12 +78,9 @@ export default function Works() {
   //   return Confirm("Are you sure?")
   // }
 
-
   return (
     <>
-      <div className='container my-5'>
-
-
+      <div className="container my-5">
         <table className="table table-dark table-striped">
           <thead>
             <tr>
@@ -88,33 +92,61 @@ export default function Works() {
               <th scope="col">Remove Task</th>
             </tr>
           </thead>
-          <tbody>
-
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
 
-      <div className='pending' style={{ display: 'none' }}>
-        <div className='container'>
-          <div className='btn_div' style={{ width:'400px'  }}>
-            <button onClick={() => {
-              document.querySelector(".pending").style.display = 'none'
-            }} className='close_btn' style={{ background: 'none', border: 'none', color: 'white' }}>
-              <img src={close_btn} style={{ width: '30px' }} alt='' />
+      <div className="pending" style={{ display: "none" }}>
+        <div className="container">
+          <div className="btn_div" style={{ width: "400px" }}>
+            <button
+              onClick={() => {
+                document.querySelector(".pending").style.display = "none";
+              }}
+              className="close_btn"
+              style={{ background: "none", border: "none", color: "white" }}
+            >
+              <img src={close_btn} style={{ width: "30px" }} alt="" />
             </button>
           </div>
-          <form style={{ width:'400px' ,height:'200px' }}>
+          <form style={{ width: "400px", height: "200px" }}>
             <h3>Are you sure ?</h3>
-            
-              <div className='container d-flex' style={{ justifyContent:'space-evenly',padding:'0px',marginTop:'50px'}}>
-              <button className='btn btn-danger delete' style={{ display:'flex', width:'150px' , height: '60px' , alignItems:'center', justifyContent:'center'}}>Delete</button>
-              
-              
-              
-              <button className='btn btn-success cancel' style={{ display:'flex', width:'150px' , height: '60px' , alignItems:'center', justifyContent:'center'}} >Cancle</button>
 
-              </div>
-            
+            <div
+              className="container d-flex"
+              style={{
+                justifyContent: "space-evenly",
+                padding: "0px",
+                marginTop: "50px",
+              }}
+            >
+              <button
+                className="btn btn-danger delete"
+                style={{
+                  display: "flex",
+                  width: "150px",
+                  height: "60px",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                Delete
+              </button>
+
+              <button
+                className="btn btn-success cancel"
+                style={{
+                  display: "flex",
+                  width: "150px",
+                  height: "60px",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                Cancle
+              </button>
+            </div>
+
             {/* <h5>Deadline: </h5>
             <input className="form-control date" type={"date"} />
             <input className="form-control time" type={"time"} />
@@ -123,5 +155,5 @@ export default function Works() {
         </div>
       </div>
     </>
-  )
+  );
 }

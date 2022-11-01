@@ -1,19 +1,52 @@
-import './App.css';
-import {BrowserRouter as Router,Routes,Route  } from "react-router-dom";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./component/Navbar";
-import Home from './component/Home'
-import Works from './component/Works';
+import Home from "./component/Home";
+import Works from "./component/Works";
+import Alert from "./component/Alert";
+import { useState } from "react";
+
 function App() {
-  document.querySelector('body').style.backgroundColor='#ecf3fb'
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (image, message, type) => {
+    setAlert({
+      img: image,
+      msg: message,
+      type: type,
+    });
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
+  };
+
+  document.querySelector("body").style.backgroundColor = "#ecf3fb";
   return (
     <>
-    <Router>
-    <Navbar/>
-      <Routes>
-        <Route exact path='/' element={<><Home/></>}></Route>
-        <Route exact path='/works' element={<><Works/></>}></Route>
-      </Routes>
-    </Router>
+      <Router>
+        <Navbar />
+        <Alert alert={alert} type="danger" />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <Home showAlert={showAlert} />
+              </>
+            }
+          ></Route>
+          <Route
+            exact
+            path="/works"
+            element={
+              <>
+                <Works showAlert={showAlert} />
+              </>
+            }
+          ></Route>
+        </Routes>
+      </Router>
     </>
   );
 }

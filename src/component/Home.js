@@ -5,8 +5,40 @@ import close_btn from './images/close_btn.png'
 
 
 export default function Home() {
-    const arr=JSON.parse(localStorage.getItem("todo")) ;
-    console.log(arr)
+    const arr=JSON.parse(localStorage.getItem("todo")) ||[] ;
+    // console.log(arr)
+
+    const [priorities,setPriorities]=useState('')
+
+const submitTask=(event)=>{
+    event.preventDefault();
+    let obj={
+        task:taskName,
+        priority:priorities,
+        date:document.querySelector(".date").value,
+        time:document.querySelector(".time").value
+    }
+    arr.push(obj);
+    console.log(arr);
+    localStorage.setItem("todo",JSON.stringify(arr));
+
+    setPriorities('')
+    document.querySelector(".date").value='';
+    document.querySelector(".time").value=''
+    setaskName('');
+}
+
+
+    // const b=[1,2,3]
+    // const xyz=()=>{
+    //     b.push(4);
+    //     console.log(b)
+    // }
+    // xyz();
+
+
+    // moedel box
+    
 
     const [taskName, setaskName] = useState('');
 
@@ -46,38 +78,20 @@ export default function Home() {
                 <form>
                     <h3>Task: {taskName}</h3>
                     <h5>Priority: 
-                        <span className='myspan' style={{display:'none'}}>dsfsdgds</span>
+                       
                         <button className='btn btn-danger' onClick={(e)=>{
                             e.preventDefault();
-                            document.querySelector(".myspan").innerHTML='high';
-                            console.log(document.querySelector(".myspan").innerHTML)
+                            setPriorities('high');
                         }}>High</button>
                         <button className='btn btn-success' onClick={(e)=>{
                             e.preventDefault();
-                            document.querySelector(".myspan").innerHTML='low';
-                            console.log(document.querySelector(".myspan").innerHTML)
+                            setPriorities('low');
                         }}>Low</button>
                     </h5>
                     <h5>Deadline: </h5>
                     <input className="form-control date" type={"date"} />
                     <input className="form-control time" type={"time"} />
-                    <button className='btn submit btn-warning text-light' onClick={(e)=>{
-                        e.preventDefault();
-                        let obj={
-                            task:taskName,
-                            priority:document.querySelector(".myspan").innerHTML,
-                            date:document.querySelector(".date").value,
-                            time:document.querySelector(".time").value
-                        }
-                        arr+=obj;
-                        console.log(arr);
-                        localStorage.setItem("todo",JSON.stringify(arr));
-
-                        document.querySelector(".myspan").innerHTML='';
-                        document.querySelector(".date").value='';
-                        document.querySelector(".time").value=''
-                        setaskName('');
-                    }}>Submit</button>
+                    <button className='btn submit btn-warning text-light' onClick={submitTask}>Submit</button>
                 </form>
                 </div>
             </div>

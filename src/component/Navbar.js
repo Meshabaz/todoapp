@@ -17,12 +17,12 @@ export default function Navbar() {
                     <div  className='container-fluid nav_div'>
                     <ul className="navbar-nav">
                         <li className="nav-item active">
-                            <Link className="nav-link" to="/"> Home <span className="sr-only">(current)</span></Link>
+                            <Link className="nav-link" to="/"> <i className="bi bi-house-fill"></i> Home <span className="sr-only">(current)</span></Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/works">Works</Link>
+                        <li className="nav-item active">
+                            <Link className="nav-link" to="/works"><i className="bi bi-menu-down"></i> Tasks</Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item active">
                             <Link className="nav-link" to="/">Pricing</Link>
                         </li>
 

@@ -22,21 +22,17 @@ code {
   position: fixed;
   top: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   z-index: 10;
-  /* border: 3px solid white; */
-
 }
 
-@media(min-width: 850px) {
+/* @media(min-width: 850px) {
+} */
   .pending .container {
-    padding-left: 24%;
-    /* border: 1px solid black; */
-
+  margin: auto 50%;
   }
-}
 @media(max-width: 990px) {
   .navbar .container-fluid {
     display: block;

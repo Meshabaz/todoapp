@@ -58,8 +58,8 @@ export default function Home(props) {
         style={{ justifyContent: "space-between", alignItems: "center" }}
       >
         <h3>
-          What you will do taday will decide your tomorrow..! Make some
-          priorities.{" "}
+          Everyone is dreamning of being successfull but only few can achive it
+          ! Let'us make some priorities, and do some task...{" "}
         </h3>
         <img src={manworking} alt="" style={{ pointerEvents: "none" }} />
       </div>
@@ -119,7 +119,7 @@ export default function Home(props) {
                 className="btn btn-danger"
                 onClick={(e) => {
                   e.preventDefault();
-                  setPriorities("high");
+                  setPriorities("High");
                 }}
               >
                 High
@@ -128,7 +128,7 @@ export default function Home(props) {
                 className="btn btn-success"
                 onClick={(e) => {
                   e.preventDefault();
-                  setPriorities("low");
+                  setPriorities("Low");
                 }}
               >
                 Low

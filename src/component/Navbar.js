@@ -7,10 +7,12 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-info">
-        <Link className="navbar-brand text-light" to="/">
-          <img src={logo} style={{ width: "50px" }} alt="" />
-          Todo App
-        </Link>
+        <div>
+          <Link className="navbar-brand text-light" to="/todoapp">
+            <img src={logo} style={{ width: "50px" }} alt="" />
+            Todo App
+          </Link>
+        </div>
         <button
           className="navbar-toggler"
           type="button"
@@ -26,7 +28,7 @@ export default function Navbar() {
           <div className="container-fluid nav_div">
             <ul className="navbar-nav">
               <li className="nav-item active">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/todoapp">
                   {" "}
                   <i className="bi bi-house-fill"></i> Home{" "}
                   <span className="sr-only">(current)</span>
@@ -34,12 +36,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item active">
                 <Link className="nav-link" to="/works">
-                  <i className="bi bi-menu-down"></i> Tasks
-                </Link>
-              </li>
-              <li className="nav-item active">
-                <Link className="nav-link" to="/">
-                  Pricing
+                  <i className="bi bi-book-fill"></i> Todo
                 </Link>
               </li>
             </ul>

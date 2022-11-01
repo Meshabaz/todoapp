@@ -29,7 +29,7 @@ function App() {
         <Routes>
           <Route
             exact
-            path="/"
+            path="/todoapp"
             element={
               <>
                 <Home showAlert={showAlert} />

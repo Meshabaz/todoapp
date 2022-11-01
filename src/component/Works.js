@@ -4,6 +4,7 @@ import warning_alert from "./images/warning_alert.png";
 import danger_alert from "./images/danger_alert.png";
 import info_alert from "./images/info_alert.png";
 import success_alert from "./images/success_alert.png";
+import manworking from "./images/m_w.png";
 
 export default function Works(props) {
   const arr = JSON.parse(localStorage.getItem("todo")) || [];
@@ -77,7 +78,7 @@ export default function Works(props) {
       localStorage.setItem("todo", JSON.stringify(arr));
       showToTable();
       document.querySelector(".title_inp").value = "";
-      document.querySelector(".priority_inp").value = "";
+      document.querySelector(".priority_inp").value = "High";
       document.querySelector(".date_inp").value = "";
       document.querySelector(".time_inp").value = "";
       props.showAlert(
@@ -121,6 +122,19 @@ export default function Works(props) {
 
   return (
     <>
+      <h1 className="text-info my-4" style={{ textAlign: "center" }}>
+        Your Todo List is Live Here !
+      </h1>
+      <div
+        className="container text-info d-flex"
+        style={{ justifyContent: "space-between", alignItems: "center" }}
+      >
+        <h3>
+          Nothing is more dangerous than a focused man building himself . Just
+          don't stop until it's done..!{" "}
+        </h3>
+        <img src={manworking} alt="" style={{ pointerEvents: "none" }} />
+      </div>
       <div className="container my-5">
         <table className="table table-dark table-striped">
           <thead>
@@ -157,9 +171,8 @@ export default function Works(props) {
             <div
               className="container d-flex"
               style={{
+                margin: "auto",
                 justifyContent: "space-evenly",
-                padding: "0px",
-                marginTop: "50px",
               }}
             >
               <button
@@ -234,9 +247,8 @@ export default function Works(props) {
             <div
               className="container d-flex"
               style={{
+                margin: "auto",
                 justifyContent: "space-evenly",
-                padding: "0px",
-                marginTop: "50px",
               }}
             >
               <button

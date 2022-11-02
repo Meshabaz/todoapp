@@ -137,7 +137,7 @@ export default function Works(props) {
         <img src={manworking} alt="" style={{ pointerEvents: "none" }} />
       </div>
       <div className="container my-5">
-        <table className="table table-dark table-striped table-responsive">
+        <table className="table table-dark table-striped table-responsive-sm table-responsive-md">
           <thead>
             <tr>
               <th scope="col">Sl.no</th>

@@ -74,13 +74,14 @@ export default function Works(props) {
       };
       console.log("obj:", myobj, "arr:", arr[e]);
       arr[e] = myobj;
-      console.log(arr[e]);
+      console.log("arr:", arr[e]);
       localStorage.setItem("todo", JSON.stringify(arr));
+      console.log(arr);
       showToTable();
-      document.querySelector(".title_inp").value = "";
-      document.querySelector(".priority_inp").value = "High";
-      document.querySelector(".date_inp").value = "";
-      document.querySelector(".time_inp").value = "";
+      // document.querySelector(".title_inp").value = "";
+      // document.querySelector(".priority_inp").value = "High";
+      // document.querySelector(".date_inp").value = "";
+      // document.querySelector(".time_inp").value = "";
       props.showAlert(
         `${success_alert}`,
         "Data modified successfully !",
@@ -136,7 +137,7 @@ export default function Works(props) {
         <img src={manworking} alt="" style={{ pointerEvents: "none" }} />
       </div>
       <div className="container my-5">
-        <table className="table table-dark table-striped">
+        <table className="table table-dark table-striped table-responsive">
           <thead>
             <tr>
               <th scope="col">Sl.no</th>

@@ -61,7 +61,12 @@ export default function Home(props) {
           Everyone is dreamning of being successful but only few can achive it !
           Let'us make some priorities, and do some task...{" "}
         </h3>
-        <img src={manworking} alt="" style={{ pointerEvents: "none" }} />
+        <img
+          src={manworking}
+          className="img-fluid"
+          alt="Responsive image"
+          style={{ pointerEvents: "none" }}
+        />
       </div>
       <div className="container my-5 ">
         <div className="container my-5">
@@ -77,9 +82,11 @@ export default function Home(props) {
               type="text"
               placeholder="Add Task Here... !"
               aria-label=".form-control-lg example"
+              required
             />
 
             <button
+              type="submit"
               style={{ background: "none", border: "none" }}
               onClick={(e) => {
                 e.preventDefault();
@@ -112,37 +119,39 @@ export default function Home(props) {
             </button>
           </div>
           <form>
-            <h3>Task: {taskName}</h3>
-            <h5>
-              Priority:
+            <div className="table-reponsive form-group">
+              <h3>Task: {taskName}</h3>
+              <h5>
+                Priority:
+                <button
+                  className="btn btn-danger"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setPriorities("High");
+                  }}
+                >
+                  High
+                </button>
+                <button
+                  className="btn btn-success"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setPriorities("Low");
+                  }}
+                >
+                  Low
+                </button>
+              </h5>
+              <h5>Deadline: </h5>
+              <input className="form-control date" type={"date"} />
+              <input className="form-control time" type={"time"} />
               <button
-                className="btn btn-danger"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setPriorities("High");
-                }}
+                className="btn submit btn-warning text-light"
+                onClick={submitTask}
               >
-                High
+                Submit
               </button>
-              <button
-                className="btn btn-success"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setPriorities("Low");
-                }}
-              >
-                Low
-              </button>
-            </h5>
-            <h5>Deadline: </h5>
-            <input className="form-control date" type={"date"} />
-            <input className="form-control time" type={"time"} />
-            <button
-              className="btn submit btn-warning text-light"
-              onClick={submitTask}
-            >
-              Submit
-            </button>
+            </div>
           </form>
         </div>
       </div>

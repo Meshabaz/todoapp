@@ -134,7 +134,12 @@ export default function Works(props) {
           Nothing is more dangerous than a focused man building himself . Just
           don't stop until it's done..!{" "}
         </h3>
-        <img src={manworking} alt="" style={{ pointerEvents: "none" }} />
+        <img
+          className="img-fluid"
+          alt="Responsive image"
+          src={manworking}
+          style={{ pointerEvents: "none" }}
+        />
       </div>
       <div className="container my-5">
         <table className="table table-dark table-striped table-responsive-sm table-responsive-md">
